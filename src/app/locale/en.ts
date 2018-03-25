@@ -3,7 +3,24 @@ export const locale = {
     "data": {
         "GENERAL": {
             "CLICK HERE": "click here",
-            "PRODUCTS": "products"
+            "PRODUCTS": "products",
+            "CLIENTS": "clients",
+            "ENTERPRISES": "enterprises/labs",
+            "SERVICES": "services",
+            "SNAPSHOTS": "snapshots",
+            "OFFERS": "offers",
+            "OBJECT": {
+                "SERVICE": "service",
+                "STEP": "step",
+                "SNAPSHOT": "snapshot",
+                "OFFER": "offer",
+                "PRODUCT": "product"
+            },
+            "ACTION": {
+                "DISABLE": "disable",
+                "REACTIVATE": "reactivate",
+                "DELETE": "delete"
+            }          
         },
         "MENU": {
             "HOME": "Home",
