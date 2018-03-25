@@ -1,0 +1,16 @@
+<ngb-tabset *ngIf="product">
+	<ngb-tab title="{{'MENU.INFO' | translate}}" id="tabInfo">
+		<ng-template ngbTabContent>
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-3 align-self-center">{{'PRODUCT.LABEL.NAME' | translate}}:</div>
+						<div class="col-sm-6 align-self-center">
+							<gg-editor [content]="product.data.name" [showControls]="true" (editSaved)="nameUpdated($event)" [readOnly]="true"></gg-editor>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ng-template>
+	</ngb-tab>
+</ngb-tabset>

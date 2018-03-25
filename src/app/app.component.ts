@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx'
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { WebSocketService, ConfigService } from 'gg-basic-data-services'
+import { DataStore, WebSocketService, ConfigService } from 'gg-basic-data-services'
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../environments/environment';
 
@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
     templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-    constructor(private webSocketService: WebSocketService, public translate: TranslateService, private configService: ConfigService ) {
+    constructor(private webSocketService: WebSocketService, public translate: TranslateService, private configService: ConfigService, private dataStore: DataStore ) {
         
         this.configService.setProduction(environment.production)
         this.webSocketService.init()
@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
      }
 
     ngOnInit(): void {
+        this.dataStore.setLaboName('gen_platf')
     }
 
     public menuObservable = Observable.from([[
@@ -35,6 +36,12 @@ export class AppComponent implements OnInit {
             route: '/dashboard',
             title: 'Dashboard',
             titleKey: 'MENU.DASHBOARD',
+            active: false
+        },
+        {
+            route: '/calculator',
+            title: 'Calculator',
+            titleKey: 'MENU.CALCULATOR',
             active: false
         }
         ]]);
