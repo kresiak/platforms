@@ -1,4 +1,4 @@
-J'ai rencontré aussi le problème suivant lors de la msie en place du projet template:
+J'ai rencontré aussi le problème suivant lors de la msie en place du projet platforms:
 
 Cannot find module '@angular-devkit/core'
 

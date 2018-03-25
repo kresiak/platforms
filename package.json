@@ -1,11 +1,11 @@
 {
-  "name": "template2018",
+  "name": "platforms2018",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4205",
-    "build": "ng build --prod -bh /template/",
+    "start": "ng serve --port 4218",
+    "build": "ng build --prod -bh /platforms/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

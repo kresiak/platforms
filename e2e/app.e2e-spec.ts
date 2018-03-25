@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('template2018 App', () => {
+describe('platforms2018 App', () => {
   let page: AppPage;
 
   beforeEach(() => {
