@@ -75,7 +75,9 @@ export const locale = {
                 "MSG19": "#>8: produits qui sont (ou ont été) dans le stockage et pour lesquels il reste plus de 8 éléments dans le stock"
             },
             "LABEL": {
-                "NAME": "Nom du produit"
+                "NAME": "Nom du produit",
+                "SELECT PRODUCT TIP": "sélectionner le produit",
+                "UNSELECT PRODUCT TIP": "désélectionner le produit"                
             }
         },
         "PLATFORM": {

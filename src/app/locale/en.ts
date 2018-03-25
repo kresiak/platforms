@@ -75,7 +75,9 @@ export const locale = {
                 "MSG19": "#>8: products that are used in the storage and for which there are more than 8 unities left in the storage"
             },
             "LABEL": {
-                "NAME": "Product name"
+                "NAME": "Product name",
+                "SELECT PRODUCT TIP": "select product",
+                "UNSELECT PRODUCT TIP": "unselect product"                
             }
         },
         "PLATFORM": {
