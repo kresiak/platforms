@@ -12,6 +12,19 @@ export class ProductService {
 
     }
 
+    private getProductFrequenceMapObservable(): Observable<Map<string, number>> {    // parse the orders in a linear way to create a map product => nb orders    
+        return this.dataStore.getDataObservable('orders').map(orders => orders.reduce((map, order) => {
+            if (order.items) {
+                order.items.filter(item => item.productId && item.quantity).forEach(item => {
+                    let productId = item.productId
+                    if (!map.has(productId)) map.set(productId, 0)
+                    map.set(productId, map.get(productId) + 1)
+                })
+            }
+            return map
+        }, new Map()))
+    }
+    
     getAnnotatedProductsAll(): Observable<any> {     // here and product list routable
         return this.getAnnotatedProducts(this.dataStore.getDataObservable('products')).map(prods =>
             prods.sort((a, b) => b.annotation.productFrequence - a.annotation.productFrequence));
@@ -29,7 +42,8 @@ export class ProductService {
         return Observable.combineLatest(productsObservable, this.dataStore.getDataObservable("suppliers"), 
             this.dataStore.getDataObservable('currencies'),
             this.dataStore.getDataObservable('products.stockage').map(entries => utils.hashMapToArrayFactoryHelper(entries, e => e.productId)),
-            (products, suppliers, currencies, stockageEntriesMap) => {
+            this.getProductFrequenceMapObservable(),
+            (products, suppliers, currencies, stockageEntriesMap, productFrequenceMap) => {
                 let mapSuppliers = suppliers.reduce((map, supplier) => {
                     map.set(supplier._id, supplier)
                     return map
@@ -46,6 +60,7 @@ export class ProductService {
                             currency: currency,
                             isPublic: !product.isLabo,
                             supplierName: supplier ? supplier.name : "unknown",
+                            productFrequence: productFrequenceMap.get(product._id) || 0,                            
                             disabled: product.disabled || (supplier && supplier.disabled)
                         }
                     };
