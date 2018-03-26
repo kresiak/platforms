@@ -20,7 +20,7 @@
 
                         <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.STEP.LABEL.RUNTIME (IN HOURS)' | translate}}</b></div>
                         <div class="col-sm-8 align-self-center">
-                            <gg-editor-number [content]="serviceStep.data.runtime" (editSaved)="runtimeMachineUpdated($event, machineItem)"></gg-editor-number>
+                            <gg-editor-number [readOnly]="isSnapshot" [content]="serviceStep.data.runtime" (editSaved)="runtimeMachineUpdated($event, machineItem)"></gg-editor-number>
                         </div>
 
                     </div>
@@ -109,11 +109,11 @@
                     <div class="row">
                         <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.STEP.LABEL.EVALUATION OF COST' | translate}}</b></div>
                         <div class="col-sm-8 align-self-center">
-                            <gg-editor [content]="serviceStep.data.costConsommables || 0" [isMonetary]="true" [showControls]="true" (editSaved)="costConsommableUpdated($event)"></gg-editor>
+                            <gg-editor [readOnly]="isSnapshot" [content]="serviceStep.data.costConsommables || 0" [isMonetary]="true" [showControls]="true" (editSaved)="costConsommableUpdated($event)"></gg-editor>
                         </div>
                         <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.STEP.LABEL.DESCRIPTION OF CONSOMMABLES' | translate}}</b></div>
                         <div class="col-sm-8 align-self-center">
-                            <gg-editor [content]="serviceStep.data.descriptionConsommables || 'no description yet'" [showControls]="true" (editSaved)="descriptionConsommableUpdated($event)"></gg-editor>
+                            <gg-editor [readOnly]="isSnapshot" [content]="serviceStep.data.descriptionConsommables || 'no description yet'" [showControls]="true" (editSaved)="descriptionConsommableUpdated($event)"></gg-editor>
                         </div>
                     </div>
                 </div>
