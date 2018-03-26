@@ -1,3 +1,5 @@
+<gg-maximize-window *ngIf="allowMaximize" [route]="'snapshot'" [id]="snapshot._id"></gg-maximize-window>
+
 <ngb-tabset *ngIf="snapshot">
     <ngb-tab title="{{'PLATFORM.SERVICE.SNAPSHOT.MENU.INFO' | translate}}" id="tabInfo">
         <ng-template ngbTabContent>

@@ -51,6 +51,8 @@ import { PlatformOfferListComponent } from './Calculator/offers/offer-list.compo
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
 import { ServiceDetailComponentRoutable }  from './Calculator/routables/service-detail.routable.component'
+import { ServiceSnapshotDetailComponentRoutable }  from './Calculator/routables/service-snapshot-detail.routable.component'
+
 
 import { PlatformService } from './Calculator/services/platform.service'
 import { ProductService } from './Products/services/products.service'
@@ -68,7 +70,7 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
     PlatformServiceStepListComponent,
     ProductDetailComponent, ProductListComponent ,
-    ServiceDetailComponentRoutable
+    ServiceDetailComponentRoutable, ServiceSnapshotDetailComponentRoutable
   ],
   imports: [
     UiModule.forRoot(), SearchHandleDataModule.forRoot(), TranslationServicesModule.forRoot(), BasicDataServicesModule.forRoot(),    
@@ -82,7 +84,8 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
       { path: "home", component: HomeComponent },
       { path: "dashboard", component: OtherComponent }  ,
       { path: "calculator", component: PlatformMainComponent },
-      { path: 'service/:id', component: ServiceDetailComponentRoutable }        
+      { path: 'service/:id', component: ServiceDetailComponentRoutable }  ,      
+      { path: 'snapshot/:id', component: ServiceSnapshotDetailComponentRoutable }        
     ])        
   ],
   providers: [PlatformService, ProductService

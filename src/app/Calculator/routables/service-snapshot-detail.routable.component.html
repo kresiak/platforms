@@ -1,0 +1,6 @@
+<div class="card" *ngIf="snapshot">
+    <div class="card-body">
+        <h6>Service Snapshot {{snapshot.data.name}} {{snapshot.version}} </h6>
+        <gg-service-snapshot-detail [snapshot]="snapshot" [allowMaximize]="false"></gg-service-snapshot-detail>
+    </div>
+</div>

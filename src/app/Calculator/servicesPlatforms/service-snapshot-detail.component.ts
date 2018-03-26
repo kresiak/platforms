@@ -20,6 +20,7 @@ export class PlatformServiceSnapshotDetailComponent implements OnInit {
     }
 
     @Input() snapshot
+    @Input() allowMaximize: boolean= true
 
     public isPageRunning: boolean = true
 
