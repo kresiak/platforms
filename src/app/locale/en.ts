@@ -1,6 +1,10 @@
 export const locale = {
     "lang": "en",
     "data": {
+        "MENU ROUTE TITLES": {
+            'SERVICE': "Service detail",
+            'SNAPSHOT': "Snapshot detail"
+        },
         "GENERAL": {
             "CLICK HERE": "click here",
             "PRODUCTS": "products",
