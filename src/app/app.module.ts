@@ -40,9 +40,9 @@ import { PlatformServiceCompareComponent } from './Calculator/servicesPlatforms/
 import { PlatformServiceCompareBaseComponent } from './Calculator/servicesPlatforms/service-compare-base.component'
 import { PlatformClientsComponent } from './Calculator/clients.component'
 import { PlatformEnterprisesComponent } from './Calculator/enterprises.component'
-import { PlatformOffersComponent } from './Calculator/offers.component'
-import { PlatformOfferDetailComponent } from './Calculator/offer-detail.component'
-import { PlatformOfferListComponent } from './Calculator/offer-list.component'
+import { PlatformOffersComponent } from './Calculator/offers/offers.component'
+import { PlatformOfferDetailComponent } from './Calculator/offers/offer-detail.component'
+import { PlatformOfferListComponent } from './Calculator/offers/offer-list.component'
 
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
