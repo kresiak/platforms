@@ -1,0 +1,6 @@
+<div class="card" *ngIf="serviceStep">
+    <div class="card-body">
+        <h6>Service Step: {{serviceStep.data.name}} ({{serviceStep.annotation.serviceName}}) </h6>
+        <gg-service-step-detail [serviceStepId]="serviceStepId" [allowMaximize]="false"></gg-service-step-detail>
+    </div>
+</div>

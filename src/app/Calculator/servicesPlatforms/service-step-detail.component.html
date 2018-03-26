@@ -1,3 +1,5 @@
+<gg-maximize-window *ngIf="allowMaximize && !isSnapshot" [route]="'step'" [id]="serviceStep.data._id"></gg-maximize-window>
+
 <ngb-tabset *ngIf="serviceStep">
     <ngb-tab title="{{'PLATFORM.SERVICE.STEP.MENU.INFO' | translate}}" id="tabInfo">
         <ng-template ngbTabContent>

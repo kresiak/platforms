@@ -19,7 +19,7 @@ export class PlatformServiceStepDetailComponent implements OnInit {
 
     @Input() serviceStepId: string = ''
     @Input() isSnapshot: boolean = false
-
+    @Input() allowMaximize: boolean= true
 
     public serviceStep: any
 

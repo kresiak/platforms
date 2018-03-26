@@ -3,7 +3,8 @@ export const locale = {
     "data": {
         "MENU ROUTE TITLES": {
             'SERVICE': "Service detail",
-            'SNAPSHOT': "Snapshot detail"
+            'SNAPSHOT': "Snapshot detail",
+            'STEP': "Service step detail"
         },
         "GENERAL": {
             "CLICK HERE": "click here",
