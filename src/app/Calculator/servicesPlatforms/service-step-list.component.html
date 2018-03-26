@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <ngb-accordion [closeOthers]="true" (panelChange)="beforeAccordionChange($event)">
+            <ngb-panel [disabled]="true">
+                <ng-template ngbPanelTitle>
+                    <div class="row">
+                        <div class="col-sm-2"><b>{{'PLATFORM.SERVICE.STEP.COLUMN.STEP' | translate}}</b></div>
+                        <div class="col-sm-3"><b>{{'PLATFORM.SERVICE.STEP.COLUMN.DESCRIPTION' | translate}}</b></div>
+                        <div class="col-sm-2"><b>{{'PLATFORM.SERVICE.STEP.COLUMN.MACHINE' | translate}}</b></div>
+                        <div class="col-sm-2"><b>{{'PLATFORM.SERVICE.STEP.COLUMN.RUNTIME (IN H)' | translate}}</b></div>
+                        <div class="col-sm-2"><b>{{'PLATFORM.SERVICE.STEP.COLUMN.COST' | translate}} {{clientType ? ' (' + clientType + ')' : ''}}</b></div>
+                    </div>
+                </ng-template>
+            </ngb-panel>
+            <ngb-panel *ngFor="let serviceStep of serviceStepsList" [id]="serviceStep.data._id">
+                <ng-template ngbPanelTitle>
+                    <div class="row" id="{{serviceStep.data._id}}">
+                        <div class="col-sm-2" [style.font-weight]="serviceStep.data._id === openPanelId ? 'bold' : 'lighter'">{{serviceStep.data.name}}</div>
+                        <div class="col-sm-3">{{serviceStep.data.description}}</div>
+                        <div class="col-sm-2">{{serviceStep.annotation.machineName}}</div>
+                        <div class="col-sm-2">{{serviceStep.data.runtime}}</div>
+                        <div class="col-sm-2 gg-price">{{(serviceStep.annotation.grandTotalCost || serviceStep.annotation.totalCost) | ggCurrency}}</div>
+                        <div class="col-sm-1" *ngIf="isSnapshot"> <img height="25" width="25" src="images/snapshot.png" /> </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <gg-service-step-detail [serviceStepId]="isSnapshot ? serviceStep._id : serviceStep.data._id" [isSnapshot]="isSnapshot"></gg-service-step-detail>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+</div>

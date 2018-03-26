@@ -38,8 +38,12 @@ import { PlatformServiceSnapshotListComponent } from './Calculator/servicesPlatf
 import { PlatformServiceSnapshotDetailComponent } from './Calculator/servicesPlatforms/service-snapshot-detail.component'
 import { PlatformServiceCompareComponent } from './Calculator/servicesPlatforms/service-compare.component'
 import { PlatformServiceCompareBaseComponent } from './Calculator/servicesPlatforms/service-compare-base.component'
+
+import { PlatformServiceStepListComponent } from './Calculator/servicesPlatforms/service-step-list.component'
+
 import { PlatformClientsComponent } from './Calculator/basic/clients.component'
 import { PlatformEnterprisesComponent } from './Calculator/basic/enterprises.component'
+
 import { PlatformOffersComponent } from './Calculator/offers/offers.component'
 import { PlatformOfferDetailComponent } from './Calculator/offers/offer-detail.component'
 import { PlatformOfferListComponent } from './Calculator/offers/offer-list.component'
@@ -62,6 +66,7 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     PlatformMainComponent, PlatformMachinesComponent, PlatformServicesMainComponent, PlatformServiceStepsMainComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
     PlatformLabourComponent, PlatformClientComponent, PlatformCorrectionComponent, PlatformServiceListComponent, PlatformServiceDetailComponent, PlatformServiceCompareComponent, PlatformServiceCompareBaseComponent, PlatformClientsComponent,
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
+    PlatformServiceStepListComponent,
     ProductDetailComponent, ProductListComponent ,
     ServiceDetailComponentRoutable
   ],
