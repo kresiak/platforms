@@ -46,7 +46,7 @@ import { PlatformOfferListComponent } from './Calculator/offers/offer-list.compo
 
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
-import { ServiceDetailComponentRoutable }  from './Calculator/Routables/service-detail.routable.component'
+import { ServiceDetailComponentRoutable }  from './Calculator/routables/service-detail.routable.component'
 
 import { PlatformService } from './Calculator/services/platform.service'
 import { ProductService } from './Products/services/products.service'
