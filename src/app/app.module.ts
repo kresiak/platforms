@@ -22,7 +22,8 @@ registerLocaleData(localeFr, 'fr');  // https://angular.io/guide/i18n#i18n-pipes
 import { HomeComponent} from './home.component'
 import { OtherComponent } from './other.component';
 
-import { PlatformMainComponent } from './Calculator/main-component'
+import { CalculatorMainComponent } from './Calculator/main-component'
+import { BillingMainComponent } from './Billing/main-component'
 import { PlatformMachinesComponent } from './Calculator/basic/machines.component'
 import { PlatformServicesMainComponent } from './Calculator/servicesPlatforms/services-main.component'
 import { PlatformServiceStepsMainComponent } from './Calculator/servicesPlatforms/service-steps-main.component'
@@ -41,12 +42,12 @@ import { PlatformServiceCompareBaseComponent } from './Calculator/servicesPlatfo
 
 import { PlatformServiceStepListComponent } from './Calculator/servicesPlatforms/service-step-list.component'
 
-import { PlatformClientsComponent } from './Calculator/basic/clients.component'
-import { PlatformEnterprisesComponent } from './Calculator/basic/enterprises.component'
+import { PlatformClientsComponent } from './Billing/basic/clients.component'
+import { PlatformEnterprisesComponent } from './Billing/basic/enterprises.component'
 
-import { PlatformOffersComponent } from './Calculator/offers/offers.component'
-import { PlatformOfferDetailComponent } from './Calculator/offers/offer-detail.component'
-import { PlatformOfferListComponent } from './Calculator/offers/offer-list.component'
+import { PlatformOffersComponent } from './Billing/offers/offers.component'
+import { PlatformOfferDetailComponent } from './Billing/offers/offer-detail.component'
+import { PlatformOfferListComponent } from './Billing/offers/offer-list.component'
 
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
@@ -55,7 +56,7 @@ import { ServiceSnapshotDetailComponentRoutable }  from './Calculator/routables/
 import { ServiceStepDetailComponentRoutable }  from './Calculator/routables/service-step-detail.routable.component'
 
 
-import { PlatformService } from './Calculator/services/platform.service'
+import { PlatformService } from './Services/platform.service'
 import { ProductService } from './Products/services/products.service'
 
 import { BasicDataServicesModule } from 'gg-basic-data-services'
@@ -66,7 +67,8 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, OtherComponent,
-    PlatformMainComponent, PlatformMachinesComponent, PlatformServicesMainComponent, PlatformServiceStepsMainComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
+    CalculatorMainComponent, BillingMainComponent,
+    PlatformMachinesComponent, PlatformServicesMainComponent, PlatformServiceStepsMainComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
     PlatformLabourComponent, PlatformClientComponent, PlatformCorrectionComponent, PlatformServiceListComponent, PlatformServiceDetailComponent, PlatformServiceCompareComponent, PlatformServiceCompareBaseComponent, PlatformClientsComponent,
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
     PlatformServiceStepListComponent,
@@ -84,7 +86,11 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "dashboard", component: OtherComponent }  ,
-      { path: "calculator", component: PlatformMainComponent },
+      { path: "equipment", component: OtherComponent }  ,
+      { path: "samples", component: OtherComponent }  ,
+      { path: "stock", component: OtherComponent }  ,
+      { path: "calculator", component: CalculatorMainComponent },
+      { path: "billing", component: BillingMainComponent },
       { path: 'service/:id', component: ServiceDetailComponentRoutable }  ,      
       { path: 'snapshot/:id', component: ServiceSnapshotDetailComponentRoutable } ,
       { path: 'step/:id', component: ServiceStepDetailComponentRoutable }        

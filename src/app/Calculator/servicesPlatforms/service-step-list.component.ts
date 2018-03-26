@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PlatformService } from '../services/platform.service'
+import { PlatformService } from '../../Services/platform.service'
 import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 
 @Component(

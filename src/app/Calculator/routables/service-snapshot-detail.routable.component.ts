@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core'
 import { ActivatedRoute, Params, Router, NavigationExtras } from '@angular/router'
 import { Observable, Subscription } from 'rxjs/Rx'
-import { PlatformService } from '../services/platform.service'
+import { PlatformService } from '../../Services/platform.service'
 import { DataStore } from 'gg-basic-data-services'
 
 @Component(

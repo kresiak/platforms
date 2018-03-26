@@ -39,9 +39,33 @@ export class AppComponent implements OnInit {
             active: false
         },
         {
+            route: '/equipment',
+            title: 'Equipment',
+            titleKey: 'MENU.EQUIPMENT',
+            active: false
+        },
+        {
+            route: '/samples',
+            title: 'Samples',
+            titleKey: 'MENU.SAMPLES',
+            active: false
+        },
+        {
+            route: '/stock',
+            title: 'Stock',
+            titleKey: 'MENU.STOCK',
+            active: false
+        },
+        {
             route: '/calculator',
             title: 'Calculator',
             titleKey: 'MENU.CALCULATOR',
+            active: false
+        },
+        {
+            route: '/billing',
+            title: 'Billing',
+            titleKey: 'MENU.BILLING',
             active: false
         }
         ]]);

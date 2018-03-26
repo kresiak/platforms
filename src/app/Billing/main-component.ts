@@ -7,7 +7,7 @@ import { DataStore } from 'gg-basic-data-services'
         templateUrl: './main-component.html'
     }
 )
-export class CalculatorMainComponent implements OnInit {
+export class BillingMainComponent implements OnInit {
     isPageRunning: boolean= true;
 
     constructor() {

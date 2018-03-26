@@ -1,0 +1,34 @@
+<div class="card" *ngIf="authorizationStatusInfo?.isLoggedIn && authorizationStatusInfo?.isPlatformAdminstrator()">
+    <div class="card-body">
+        <ngb-tabset>
+            <ngb-tab title="{{'PLATFORM.MENU.ENTERPRISES' | translate}}" id="tabEnterprises">
+                <ng-template ngbTabContent>
+                    <div class="card">
+                        <div class="card-body">
+                            <gg-enterprises></gg-enterprises>                            
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="{{'PLATFORM.MENU.CLIENTS' | translate}}" id="tabClients">
+                <ng-template ngbTabContent>
+                    <div class="card">
+                        <div class="card-body">
+                            <gg-clients></gg-clients>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="{{'PLATFORM.MENU.OFFERS' | translate}}" id="tabOffer">
+                <ng-template ngbTabContent>
+                    <div class="card">
+                        <div class="card-body">
+                            <gg-offers></gg-offers>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+
+        </ngb-tabset> 
+    </div>
+</div>

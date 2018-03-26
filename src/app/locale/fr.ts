@@ -30,8 +30,12 @@ export const locale = {
         "MENU": {
             "HOME": "Accueil",
             "DASHBOARD": "Tableau de bord",
-            "CALCULATOR": "Simulateur de prix",
-            "INFO": "Infos"
+            "CALCULATOR": "Calculateur des prix",
+            "INFO": "Infos",
+            "BILLING": "Gestion des offres",
+            "EQUIPMENT": "Réservation des équipements",
+            "SAMPLES": "Gestion des échantillons",
+            "STOCK": "Gestion du stock"
         },
         "FORM": {
             "SUBMIT": "Envoyer",

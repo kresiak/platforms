@@ -31,7 +31,11 @@ export const locale = {
             "HOME": "Home",
             "DASHBOARD": "Dashboard",
             "CALCULATOR": "Prices calculator",
-            "INFO": "Infos"
+            "INFO": "Infos",
+            "BILLING": "Billing",
+            "EQUIPMENT": "Equipment reservation",
+            "SAMPLES": "Samples",
+            "STOCK": "Stock"
         },
         "FORM": {
             "SUBMIT": "Submit",
