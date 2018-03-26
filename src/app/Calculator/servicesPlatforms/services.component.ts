@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
 import { DataStore } from 'gg-basic-data-services'
-import { PlatformService } from './services/platform.service'
+import { PlatformService } from '../services/platform.service'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectableData } from 'gg-basic-code'
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap'

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
 import { DataStore } from 'gg-basic-data-services'
-import { PlatformService } from './services/platform.service'
-import { ProductService } from '../Products/services/products.service'
+import { PlatformService } from '../services/platform.service'
+import { ProductService } from '../../Products/services/products.service'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 
