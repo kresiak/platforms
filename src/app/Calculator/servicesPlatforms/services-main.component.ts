@@ -9,11 +9,11 @@ import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 
 @Component(
     {
-        selector: 'gg-services',
-        templateUrl: './services.component.html'
+        selector: 'gg-services-main',
+        templateUrl: './services-main.component.html'
     }
 )
-export class PlatformServicesComponent implements OnInit {
+export class PlatformServicesMainComponent implements OnInit {
     constructor(private formBuilder: FormBuilder, private dataStore: DataStore, private platformService: PlatformService) {
     }
 

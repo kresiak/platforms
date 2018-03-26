@@ -8,11 +8,11 @@ import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 
 @Component(
     {
-        selector: 'gg-service-step-list',
-        templateUrl: './service-step-list.component.html'
+        selector: 'gg-service-steps-main',
+        templateUrl: './service-steps-main.component.html'
     }
 )
-export class PlatformServiceStepListComponent implements OnInit {
+export class PlatformServiceStepsMainComponent implements OnInit {
     serviceDisabledStepsList: any;
     
     constructor(private formBuilder: FormBuilder, private dataStore: DataStore, private platformService: PlatformService) {

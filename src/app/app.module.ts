@@ -24,8 +24,8 @@ import { OtherComponent } from './other.component';
 
 import { PlatformMainComponent } from './Calculator/main-component'
 import { PlatformMachinesComponent } from './Calculator/basic/machines.component'
-import { PlatformServicesComponent } from './Calculator/servicesPlatforms/services.component'
-import { PlatformServiceStepListComponent } from './Calculator/servicesPlatforms/service-step-list.component'
+import { PlatformServicesMainComponent } from './Calculator/servicesPlatforms/services-main.component'
+import { PlatformServiceStepsMainComponent } from './Calculator/servicesPlatforms/service-steps-main.component'
 import { PlatformServiceListComponent } from './Calculator/servicesPlatforms/service-list.component'
 import { PlatformServiceDetailComponent } from './Calculator/servicesPlatforms/service-detail.component'
 import { PlatformServiceStepDetailComponent } from './Calculator/servicesPlatforms/service-step-detail.component'
@@ -59,7 +59,7 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, OtherComponent,
-    PlatformMainComponent, PlatformMachinesComponent, PlatformServicesComponent, PlatformServiceStepListComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
+    PlatformMainComponent, PlatformMachinesComponent, PlatformServicesMainComponent, PlatformServiceStepsMainComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
     PlatformLabourComponent, PlatformClientComponent, PlatformCorrectionComponent, PlatformServiceListComponent, PlatformServiceDetailComponent, PlatformServiceCompareComponent, PlatformServiceCompareBaseComponent, PlatformClientsComponent,
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
     ProductDetailComponent, ProductListComponent ,
