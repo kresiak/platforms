@@ -25,6 +25,7 @@ export class PlatformServiceDetailComponent implements OnInit {
 
     @Input() serviceItem
     @Input() serviceToCompareToId: string= undefined
+    @Input() allowMaximize: boolean= true
 
     public isPageRunning: boolean = true
 

@@ -46,6 +46,7 @@ import { PlatformOfferListComponent } from './Calculator/platform-offer-list.com
 
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
+import { ServiceDetailComponentRoutable }  from './Calculator/Routables/service-detail.routable.component'
 
 import { PlatformService } from './Calculator/services/platform.service'
 import { ProductService } from './Products/services/products.service'
@@ -61,7 +62,8 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     PlatformMainComponent, PlatformMachinesComponent, PlatformServicesComponent, PlatformServiceStepListComponent, PlatformServiceStepDetailComponent, PlatformServiceSnapshotsComponent, PlatformServiceSnapshotListComponent,
     PlatformLabourComponent, PlatformClientComponent, PlatformCorrectionComponent, PlatformServiceListComponent, PlatformServiceDetailComponent, PlatformServiceCompareComponent, PlatformServiceCompareBaseComponent, PlatformClientsComponent,
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
-    ProductDetailComponent, ProductListComponent  
+    ProductDetailComponent, ProductListComponent ,
+    ServiceDetailComponentRoutable
   ],
   imports: [
     UiModule.forRoot(), SearchHandleDataModule.forRoot(), TranslationServicesModule.forRoot(), BasicDataServicesModule.forRoot(),    
@@ -74,9 +76,9 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "dashboard", component: OtherComponent }  ,
-      { path: "calculator", component: PlatformMainComponent }          
-    ])    
-    
+      { path: "calculator", component: PlatformMainComponent },
+      { path: 'service/:id', component: ServiceDetailComponentRoutable }        
+    ])        
   ],
   providers: [PlatformService, ProductService
   ],

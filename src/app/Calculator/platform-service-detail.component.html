@@ -1,22 +1,32 @@
+<gg-maximize-window *ngIf="allowMaximize" [route]="'service'" [id]="serviceItem.data._id"></gg-maximize-window>
+
 <ngb-tabset>
     <ngb-tab title="{{'PLATFORM.SERVICE.DETAIL.MENU.INFO' | translate}}" id="tabInfo">
         <ng-template ngbTabContent>
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.DETAIL.LABEL.NAME' | translate}}</b></div>
+                        <div class="col-sm-3 align-self-center">
+                            <b>{{'PLATFORM.SERVICE.DETAIL.LABEL.NAME' | translate}}</b>
+                        </div>
                         <div class="col-sm-8 align-self-center">
                             <gg-editor [content]="serviceItem.data.name" [showControls]="true" (editSaved)="nameServiceUpdated($event, serviceItem)"></gg-editor>
                         </div>
-                        <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.DETAIL.LABEL.DESCRIPTION' | translate}}</b></div>
+                        <div class="col-sm-3 align-self-center">
+                            <b>{{'PLATFORM.SERVICE.DETAIL.LABEL.DESCRIPTION' | translate}}</b>
+                        </div>
                         <div class="col-sm-8 align-self-center">
                             <gg-editor [content]="serviceItem.data.description" [showControls]="true" (editSaved)="descriptionServiceUpdated($event, serviceItem)"></gg-editor>
                         </div>
-                        <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CURRENT VERSION' | translate}}</b></div>
+                        <div class="col-sm-3 align-self-center">
+                            <b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CURRENT VERSION' | translate}}</b>
+                        </div>
                         <div class="col-sm-8 align-self-center">
                             {{serviceItem.annotation.currentSnapshot}}
                         </div>
-                        <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CATEGORY' | translate}}</b></div>
+                        <div class="col-sm-3 align-self-center">
+                            <b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CATEGORY' | translate}}</b>
+                        </div>
                         <div class="col-sm-8 align-self-center">
                             <gg-selector [selectableData]="selectableCategoriesObservable" [selectedIds]="selectedCategoryIdsObservable" (selectionChanged)="categorySelectionChanged($event)"
                                 (selectionOptionAdded)="categoryHasBeenAdded($event)">
@@ -31,7 +41,9 @@
         <ng-template ngbTabContent>
             <div class="card">
                 <div class="card-body">
-                    <div class="col-sm-3 align-self-center"><b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CLIENT TYPE USED' | translate}}</b></div>
+                    <div class="col-sm-3 align-self-center">
+                        <b>{{'PLATFORM.SERVICE.DETAIL.LABEL.CLIENT TYPE USED' | translate}}</b>
+                    </div>
                     <div class="col-sm-8 align-self-center">
                         <gg-editor-autocomplete [selectableData]="clientListObservable" [emptyContentText]="'default correction'" [selectedId]="serviceItem.data.clientTypeId"
                             (idChanged)="clientTypeChanged($event, serviceItem)"></gg-editor-autocomplete>

@@ -1,0 +1,6 @@
+<div class="card" *ngIf="service">
+    <div class="card-body">
+        <h6>Otp {{service.data.name}}</h6>
+        <gg-platform-service-detail [serviceItem]="service" [allowMaximize]="false"></gg-platform-service-detail>
+    </div>
+</div>
