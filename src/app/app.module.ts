@@ -93,7 +93,8 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
       { path: "billing", component: BillingMainComponent },
       { path: 'service/:id', component: ServiceDetailComponentRoutable }  ,      
       { path: 'snapshot/:id', component: ServiceSnapshotDetailComponentRoutable } ,
-      { path: 'step/:id', component: ServiceStepDetailComponentRoutable }        
+      { path: 'step/:id', component: ServiceStepDetailComponentRoutable },
+      { path: '**', redirectTo: '/home' }          
     ])        
   ],
   providers: [PlatformService, ProductService
