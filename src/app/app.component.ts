@@ -14,7 +14,9 @@ export class AppComponent implements OnInit {
     constructor(private webSocketService: WebSocketService, public translate: TranslateService, private configService: ConfigService, private dataStore: DataStore ) {
         
         this.configService.setProduction(environment.production)
-        this.webSocketService.init()
+        this.dataStore.setApplication(this.dataStore.PLATFORMS)        
+        
+        this.webSocketService.init(this.dataStore.PLATFORMS)
        
         setTimeout(() => {
             this.webSocketService.requeryDb()
