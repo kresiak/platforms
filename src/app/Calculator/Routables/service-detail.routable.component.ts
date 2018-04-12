@@ -1,19 +1,15 @@
 import { Component, Input, OnInit, Output } from '@angular/core'
-import { ActivatedRoute, Params, Router, NavigationExtras } from '@angular/router'
 import { Observable, Subscription } from 'rxjs/Rx'
-import { PlatformService } from '../../Services/platform.service'
+
+import  {BaseComponentRoutable} from './routable-base.component'
 
 @Component(
     {
         templateUrl: './service-detail.routable.component.html'
     }
 )
-export class ServiceDetailComponentRoutable implements OnInit {
+export class ServiceDetailComponentRoutable extends BaseComponentRoutable {
     service: any;
-    constructor(private route: ActivatedRoute, private platformService: PlatformService) { }
-
-    ourObject: any
-    state: {}    
 
     initData(id: string) {
         if (id) {
@@ -22,19 +18,5 @@ export class ServiceDetailComponentRoutable implements OnInit {
             })
         }
     }
-
-    public isPageRunning: boolean = true
-
-    ngOnInit(): void {
-        this.route.params.first().subscribe((params: Params) => {
-            let id = params['id'];
-            this.initData(id)
-        });
-    }
-
-    ngOnDestroy(): void {
-        this.isPageRunning= false
-    }
-    
 
 }

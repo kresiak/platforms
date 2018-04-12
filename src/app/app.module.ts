@@ -51,9 +51,12 @@ import { PlatformOfferListComponent } from './Billing/offers/offer-list.componen
 
 import { ProductDetailComponent }  from './Products/product-detail.component'
 import { ProductListComponent }  from './Products/product-list.component'
+
 import { ServiceDetailComponentRoutable }  from './Calculator/routables/service-detail.routable.component'
 import { ServiceSnapshotDetailComponentRoutable }  from './Calculator/routables/service-snapshot-detail.routable.component'
 import { ServiceStepDetailComponentRoutable }  from './Calculator/routables/service-step-detail.routable.component'
+import { BaseComponentRoutable }  from './Calculator/routables/routable-base.component'
+
 
 
 import { PlatformService } from './Services/platform.service'
@@ -73,7 +76,7 @@ import { TranslationLoaderService, TranslationServicesModule } from 'gg-translat
     PlatformServiceSnapshotDetailComponent, PlatformServiceStepClientTypeCostComponent, PlatformEnterprisesComponent, PlatformOffersComponent, PlatformOfferDetailComponent, PlatformOfferListComponent  ,
     PlatformServiceStepListComponent,
     ProductDetailComponent, ProductListComponent ,
-    ServiceDetailComponentRoutable, ServiceSnapshotDetailComponentRoutable, ServiceStepDetailComponentRoutable
+    BaseComponentRoutable, ServiceDetailComponentRoutable, ServiceSnapshotDetailComponentRoutable, ServiceStepDetailComponentRoutable
   ],
   imports: [
     UiModule.forRoot(), SearchHandleDataModule.forRoot(), TranslationServicesModule.forRoot(), BasicDataServicesModule.forRoot(),    
