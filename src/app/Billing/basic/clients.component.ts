@@ -2,8 +2,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
 import { DataStore } from 'gg-basic-data-services'
 import { PlatformService } from '../../Services/platform.service'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
+import { FormItemStructure, FormItemType} from 'gg-ui'
 
 @Component(
     {
@@ -12,10 +12,9 @@ import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
     }
 )
 export class PlatformClientsComponent implements OnInit {
-    constructor(private formBuilder: FormBuilder, private dataStore: DataStore, private platformService: PlatformService) {
+    constructor(private dataStore: DataStore, private platformService: PlatformService) {
     }
 
-    public clientsForm: FormGroup
     public clientsList: any= []
     public isPageRunning: boolean = true
     public entrepriseListObservable
@@ -30,15 +29,14 @@ export class PlatformClientsComponent implements OnInit {
         this.clientsList= clients
     }
 
-    ngOnInit(): void {
-        const emailRegex = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
+    public formStructure: FormItemStructure[]= []
 
-        this.clientsForm = this.formBuilder.group({
-            nameOfClient: ['', [Validators.required, Validators.minLength(3)]],
-            firstName: ['', [Validators.required, Validators.minLength(3)]],
-            email: ['', [Validators.required, Validators.pattern(emailRegex)]],
-            telephone: ['', Validators.required]
-        })
+    ngOnInit(): void {
+
+        this.formStructure.push(new FormItemStructure('name', 'PLATFORM.CLIENT.LABEL.NAME', FormItemType.InputText, {isRequired: true, minimalLength: 3}))
+        this.formStructure.push(new FormItemStructure('firstName', 'PLATFORM.CLIENT.LABEL.FIRST NAME', FormItemType.InputText, {isRequired: true, minimalLength: 3}))
+        this.formStructure.push(new FormItemStructure('email', 'PLATFORM.CLIENT.LABEL.EMAIL', FormItemType.InputText, {isRequired: true, isEmail:true}))
+        this.formStructure.push(new FormItemStructure('telephone', 'PLATFORM.CLIENT.LABEL.TELEPHONE', FormItemType.InputText, {isRequired: true}))
 
         this.entrepriseListObservable = this.dataStore.getDataObservable('platform.enterprises').takeWhile(() => this.isPageRunning).map(enterprises => enterprises.map(enterprise => {
             return {
@@ -53,20 +51,16 @@ export class PlatformClientsComponent implements OnInit {
         this.enterpriseId = enterpriseId
     }    
 
-    save(formValue, isValid) {
+    formSaved(data) {
         this.dataStore.addData('platform.clients', {
-            name: formValue.nameOfClient,
-            firstName: formValue.firstName,
-            email: formValue.email,
-            telephone: formValue.telephone,
-            enterpriseId: this.enterpriseId
-        }).subscribe(res => {
-            this.reset()
-        })
-    }
-
-    reset() {
-        this.clientsForm.reset()
+            name: data.name,
+            firstName: data.firstName,
+            email: data.email,
+            telephone: data.telephone,
+            enterpriseId: data.enterpriseId
+        }).first().subscribe(res => {
+            data.setSuccess('OK')
+        });
     }
 
     ngOnDestroy(): void {
