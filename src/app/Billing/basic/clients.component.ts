@@ -4,6 +4,7 @@ import { DataStore } from 'gg-basic-data-services'
 import { PlatformService } from '../../Services/platform.service'
 import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 import { FormItemStructure, FormItemType} from 'gg-ui'
+import { SelectableData } from 'gg-basic-code'
 
 @Component(
     {
@@ -19,6 +20,7 @@ export class PlatformClientsComponent implements OnInit {
     public isPageRunning: boolean = true
     public entrepriseListObservable
     public enterpriseId: string
+    public enterprisesList: any
 
     fnFilter(user, txt) {
         if (txt.trim() === '') return true;
@@ -37,7 +39,7 @@ export class PlatformClientsComponent implements OnInit {
         this.formStructure.push(new FormItemStructure('firstName', 'PLATFORM.CLIENT.LABEL.FIRST NAME', FormItemType.InputText, {isRequired: true, minimalLength: 3}))
         this.formStructure.push(new FormItemStructure('email', 'PLATFORM.CLIENT.LABEL.EMAIL', FormItemType.InputText, {isRequired: true, isEmail:true}))
         this.formStructure.push(new FormItemStructure('telephone', 'PLATFORM.CLIENT.LABEL.TELEPHONE', FormItemType.InputText, {isRequired: true}))
-        this.formStructure.push(new FormItemStructure('entrepriseListObservable', 'PLATFORM.CLIENT.LABEL.ENTERPRISE OF CLIENT', FormItemType.GigaOptions, {isRequired: true, selectableData: this.entrepriseListObservable}))
+        this.formStructure.push(new FormItemStructure('entrepriseListObservable', 'PLATFORM.CLIENT.LABEL.ENTERPRISE OF CLIENT', FormItemType.FlexiList, {isRequired: true, selectableData: this.entrepriseListObservable })) 
 
         this.entrepriseListObservable = this.dataStore.getDataObservable('platform.enterprises').takeWhile(() => this.isPageRunning).map(enterprises => enterprises.map(enterprise => {
             return {
