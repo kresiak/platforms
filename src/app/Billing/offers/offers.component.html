@@ -9,6 +9,8 @@
             <ng-template ngbTabContent>
                 <div class="card">
                     <div class="card-body">
+                            <gg-form [structure]="formStructure" [primaryDataObservable]="clientsListObservable" [primaryControlName]="'description'"  (formSaved)="formSaved($event)"></gg-form>
+<!--                            
                         <div class="container-fluid">
                             <form [formGroup]="offerForm" (ngSubmit)="save(offerForm.value, offerForm.valid)">
                                 <div class="form-group row">
@@ -34,6 +36,7 @@
                                 </div>
                             </form>
                         </div>
+                    -->                    
                     </div>
                 </div>
             </ng-template>
