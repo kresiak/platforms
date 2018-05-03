@@ -5,6 +5,7 @@ import { PlatformService } from '../../Services/platform.service'
 import {utilsComparators as comparatorsUtils} from 'gg-search-handle-data'
 import * as moment from "moment"
 import { FormItemStructure, FormItemType} from 'gg-ui'
+import { SelectableData } from 'gg-basic-code'
 
 @Component(
     {
