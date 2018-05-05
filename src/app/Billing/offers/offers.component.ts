@@ -20,14 +20,15 @@ export class PlatformOffersComponent implements OnInit {
 public offersList: any
 public offersObservable
 public isPageRunning: boolean = true
-public clientsListObservable
+public clientsListObservable: Observable<any>
 public clientId: string
 public formStructure: FormItemStructure[]= []
 
     ngOnInit(): void {
 
         this.formStructure.push(new FormItemStructure('description', 'PLATFORM.OFFER.LABEL.DESCRIPTION', FormItemType.InputText, {isRequired: true, minimalLength: 3}))
-        this.formStructure.push(new FormItemStructure('clientId', 'PLATFORM.OFFER.LABEL.CHOOSE A CLIENT', FormItemType.FlexiList, {isRequired: true, selectableData: this.clientsListObservable }))
+        this.formStructure.push(new FormItemStructure('clientId', 'PLATFORM.OFFER.LABEL.CHOOSE A CLIENT', FormItemType.FlexiList, {selectableData: this.clientsListObservable, isRequired: true }))
+    //  this.formStructure.push(new FormItemStructure('clientId', 'PLATFORM.OFFER.LABEL.CHOOSE A CLIENT', FormItemType.Faculties, {selectableData: this.clientsListObservable, isRequired: true }))
 
         this.offersObservable=this.platformService.getAnnotatedOffers()
 
